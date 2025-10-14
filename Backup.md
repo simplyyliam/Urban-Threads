@@ -1,0 +1,2 @@
+- Public facing name for project: project-487201081479
+- Web client ID: 487201081479-j00rb467oli8ohcd3vis03mc40vq0gga.apps.googleusercontent.com
