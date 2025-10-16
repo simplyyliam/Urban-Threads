@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Dm Sans", sans-serif;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 77em;
+    height: auto;
+    padding: 20px 10px;
+}
+
+#nav__search {
+    display: flex;
+    gap: 10px;
+    width: 19em;
+    padding: 16px 15px;
+    border-radius: 100px;
+    background-color: #F8F7F4;
+}
+
+#nav__search input {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#nav__search input::placeholder, #nav__search svg {
+    opacity: 50%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 16px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+}
+
+.nav__cart, #account__profile {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #010101;
+    border-radius: 100%;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#account__login {
+    width: 116px;
+    height: 40px;
+    /* border: 1px solid #010101; */
+    background-color: #010101;
+    border-radius: 100px;
+}
+
+#account__login a {
+    color: white;
+}
+
+.hide {
+    display: none;
+}
