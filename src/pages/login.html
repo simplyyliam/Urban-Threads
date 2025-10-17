@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Threads - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/login.css">
+    <script type="module" src="/src/lib/login.js" defer></script>
+</head>
+<body>
+    <div class="login__container">
+        <div class="login__header">
+            <div class="brand__logo"></div>
+            <div class="title__section">
+                <h1 class="title">Urban Threads</h1>
+                <p class="subtitle">Login to Urban Threads</p>
+            </div>
+        </div>
+
+        <div class="login__form">
+            <div class="form__inputs">
+                <div class="login__options">
+                    <button class="platform__button" aria-label="Login with Google">
+                        <svg fill="none" viewBox="0 0 24 24">
+                            <path d="M21.5939 11.0792H12.3209V13.8256H18.9768C18.6214 17.6382 15.5196 19.286 12.5148 19.286C8.70223 19.286 5.30969 16.3135 5.30969 12.0162C5.30969 7.88057 8.54068 4.74651 12.5148 4.74651C15.5519 4.74651 17.3936 6.71741 17.3936 6.71741L19.2676 4.74651C19.2676 4.74651 16.7474 2.00016 12.3856 2.00016C6.6344 1.96785 2.24023 6.78203 2.24023 11.9839C2.24023 17.0243 6.37592 22 12.4825 22C17.8783 22 21.7554 18.349 21.7554 12.8886C21.7877 11.7578 21.5939 11.0792 21.5939 11.0792Z" fill="#323544"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="platform__button" aria-label="Login with Apple">
+                        <svg fill="none" viewBox="0 0 24 24">
+                            <path d="M19.7413 8.81869C19.6235 8.90869 17.5433 10.0628 17.5433 12.6291C17.5433 15.5974 20.1903 16.6475 20.2695 16.6735C20.2573 16.7375 19.849 18.1116 18.8739 19.5118C18.0044 20.7439 17.0964 21.974 15.715 21.974C14.3336 21.974 13.9781 21.1839 12.3834 21.1839C10.8293 21.1839 10.2768 22 9.01321 22C7.74964 22 6.86798 20.8599 5.85429 19.4598C4.68013 17.8156 3.73145 15.2613 3.73145 12.8371C3.73145 8.94872 6.2992 6.88648 8.82631 6.88648C10.1691 6.88648 11.2884 7.75458 12.1315 7.75458C12.9339 7.75458 14.1853 6.83449 15.7129 6.83449C16.2919 6.83449 18.3721 6.88648 19.7413 8.81869ZM14.9877 5.18832C15.6195 4.45025 16.0664 3.42614 16.0664 2.40204C16.0664 2.26003 16.0542 2.11601 16.0278 2C14.9999 2.038 13.777 2.67407 13.0395 3.51615C12.4606 4.16422 11.9202 5.18832 11.9202 6.22642C11.9202 6.38247 11.9466 6.53845 11.9588 6.58844C12.0238 6.60047 12.1294 6.61446 12.2351 6.61446C13.1574 6.61446 14.3173 6.00639 14.9877 5.18832Z" fill="#323544"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="platform__button" aria-label="Login with Facebook">
+                        <svg fill="none" viewBox="0 0 24 25">
+                            <path d="M12 2.53906C17.5229 2.53906 22 7.01621 22 12.5391C22 17.5304 18.3431 21.6674 13.5625 22.4176V15.4297H15.8926L16.3359 12.5391L13.5625 12.5387V10.6632C13.5625 10.657 13.5625 10.6509 13.5626 10.6447C13.5626 10.6354 13.5628 10.6262 13.5629 10.6169C13.578 9.84259 13.9742 9.10156 15.1921 9.10156H16.4531V6.64062C16.4531 6.64062 15.3087 6.44492 14.2146 6.44492C11.966 6.44492 10.4842 7.78652 10.4386 10.2193C10.4379 10.2578 10.4375 10.2965 10.4375 10.3355V12.5387H7.89844V15.4293L10.4375 15.4297V22.4172C5.65686 21.667 2 17.5304 2 12.5391C2 7.01621 6.47715 2.53906 12 2.53906Z" fill="#323544"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <input type="email" class="input__field" placeholder="Johndoe@gmail.com">
+
+                <input type="password" class="input__field" placeholder="Password">
+
+                <button class="login-button">Login</button>
+            </div>
+
+            <div class="login__footer">
+                <div class="remember__me">
+                    <input type="checkbox" id="remember" class="checkbox">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+
+        <p class="login__signup">
+            Don't have an account? Click <a href="#">here</a>
+        </p>
+    </div>
+</body>
+</html>

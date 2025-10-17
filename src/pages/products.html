@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/products.css">
+        <script type="module" src="/src/lib/productListing.js" defer></script>
+</head>
+<body>
+    <div class="product__container">
+        <!-- Category Info Header -->
+        <div class="category__info">
+            <p class="item__count">50 <span>Items Found</span></p>
+            <button class="filter__button">
+                <span class="filter__text">Filter</span>
+                <svg class="filter__icon" fill="none" viewBox="0 0 18 18">
+                    <path d="M8.77123 3.65446V13.8881" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.09631" />
+                    <path d="M13.8881 8.77201H3.65437" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.09631" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="products__wrapper">
+            <div class="products__grid"></div>
+    </div>
+</body>
+</html>
