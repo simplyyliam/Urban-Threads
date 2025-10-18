@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/src/styles/checkout.css">
-    <script type="module" src="/src/lib/layout.js"></script>
-        <script type="module" src="/src/main.js" defer></script>
+    <link rel="stylesheet" href="/src/styles/checkout.css" />
   </head>
   <body>
     <div class="checkout__container">
-      <div class="product__image"></div>
+      <div id="product__image"></div>
       <div class="checkout__summary">
         <div class="checkout__details">
           <div class="checkout__header">
@@ -53,10 +51,15 @@
           </div>
         </div>
         <div class="checkout__buy__add-cart">
-            <button>Buy Now</button>
-            <button id="add-cart">Add To Cart</button>
+          <button>Buy Now</button>
+          <button id="add-cart">Add To Cart</button>
         </div>
       </div>
     </div>
+        <script type="module" src="/src/lib/layout.js"></script>
+    <script type="module" src="/src/main.js" defer></script>
+    <script type="module" src="/src/lib/layout.js"></script>
+    <script type="module" src="/src/lib/search.js" defer></script>
+    <script type="module" src="/src/lib/checkout.js" defer></script>
   </body>
 </html>

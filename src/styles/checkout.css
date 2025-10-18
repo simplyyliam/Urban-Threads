@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 
 
 
@@ -10,6 +10,7 @@ body, html {
     padding: 10px 10px;
     width: 100vw;
     height: auto;
+    font-family: "Dm Sans", sans-serif;
 }
  
 .checkout__container {
@@ -20,18 +21,19 @@ body, html {
     gap: 16px;
 }
 
-.product__image, .checkout__summary{
+#product__image, .checkout__summary{
     width: 100%;
     height: 100%;
     padding: 10px;
 }
 
-.checkout__summary {
-    justify-content: space-between;
+#product__image {
+    background-size: cover;
+    background: center no-repeat;
 }
 
-.product__image {
-    background: url("/Gasy.png") center no-repeat;
+.checkout__summary {
+    justify-content: space-between;
 }
 
 
