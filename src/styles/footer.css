@@ -1,114 +1,175 @@
+/* ------------------ FOOTER BASE ------------------ */
 footer {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
     margin-top: 70px;
-    padding: 10px;
+    padding: 1rem;
+    width: 100%;
+    background-color: #f2f2f2;
 }
 
 footer #footer__container {
     display: flex;
-
+    flex-wrap: wrap; /* allow items to stack on small screens */
     justify-content: space-between;
-    width: 76em;
-    height: 18em;
-    padding: 26px 53px;
-    background-color: #f2f2f2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem 3rem;
+    gap: 2rem;
 }
 
+/* ------------------ BRAND ------------------ */
 .footer__brand {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    gap: 0.75rem;
+    min-width: 120px;
 }
 
 .footer__brand .brand__logo {
     width: 70px;
     height: 70px;
     background-color: #010101;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
+/* ------------------ NEWSLETTER ------------------ */
 .footer__newsletter {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 18em;
-    height: 15em;
+    width: 100%;
+    max-width: 300px;
+    gap: 1rem;
 }
 
 .footer__newsletter .newsletter__header p {
-    width: 20em;
-    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .newsletter__form, .newsletter__signup {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
 }
 
-.newsletter__form {
-    height: auto;
-    width: auto;
-    gap: 16px;
-}
-
-.newsletter__signup {
-    gap: 12px;
-}
-.newsletter__signup .newsletter__subscribe, .newsletter__signup input {
+.newsletter__signup .newsletter__subscribe,
+.newsletter__signup input {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    background-color: #010101;
-    color: white;
     border: none;
     outline: none;
+    font-size: 0.9rem;
+}
+
+.newsletter__signup .newsletter__subscribe {
+    background-color: #010101;
+    color: white;
 }
 
 .newsletter__signup input {
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     color: black;
 }
 
 .newsletter__signup input::placeholder {
     text-align: center;
-    color: #6E6E6E50;
+    color: rgba(110, 110, 110, 0.5);
 }
 
+/* ------------------ CONTACT & EXPLORE ------------------ */
 .footer__contact, .footer__explore {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;    
-    height: 10em;
-}
-
-.footer__contact li, .footer__explore li {
-    list-style: none;
-    opacity: 50%;
+    justify-content: flex-start;
+    gap: 1rem;
+    min-width: 120px;
 }
 
 .footer__contact .list, .footer__explore .list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.5rem;
 }
+
+.footer__contact li, .footer__explore li {
+    list-style: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
 .footer__contact li:hover, .footer__explore li:hover {
-    opacity: 100%;
+    opacity: 1;
     cursor: pointer;
 }
 
-button {
-    cursor: pointer;
-}
-
+/* ------------------ TYPOGRAPHY ------------------ */
 footer h1 {
-    font-size: 23px;
-    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 400;
 }
+
 footer p {
-    font-size: 15px;
-    opacity: 50%;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    opacity: 0.5;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 1024px) {
+    footer #footer__container {
+        padding: 1.5rem 2rem;
+    }
+
+    .footer__newsletter {
+        max-width: 250px;
+    }
+
+    .footer__brand, .footer__contact, .footer__explore {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer #footer__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .footer__brand, .footer__newsletter, .footer__contact, .footer__explore {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter__signup .newsletter__subscribe,
+    .newsletter__signup input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 0.5rem;
+    }
+
+    .footer__newsletter .newsletter__header p {
+        font-size: 0.85rem;
+    }
+
+    .footer__contact li, .footer__explore li {
+        font-size: 0.8rem;
+    }
+
+    footer h1 {
+        font-size: 1.1rem;
+    }
 }

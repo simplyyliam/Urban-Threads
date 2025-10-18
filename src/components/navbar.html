@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/src/styles/navbar.css">
+<link rel="stylesheet" href="/src/styles/navbar.css" />
 
 <nav>
   <a href="/index.html" class="nav__logo">Urban Threads</a>
@@ -27,13 +27,18 @@
           stroke-linejoin="round"
         ></path>
       </svg>
-      <input id="searchInput" type="text" placeholder="Search for hoodies, t-shirts" />
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search for hoodies, t-shirts"
+      />
     </div>
     <div id="searchResults" class="search__results"></div>
   </div>
   <div class="nav__links">
     <a href="">About</a>
-    <button class="nav__cart btn">
+    <a href="/src/pages/cart.html">
+      <button class="nav__cart btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -58,6 +63,7 @@
         ></path>
       </svg>
     </button>
+    </a>
     <div class="account">
       <button id="account__profile" class="btn"></button>
       <span id="account__id"></span>

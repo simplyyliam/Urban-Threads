@@ -3,10 +3,18 @@ import { db } from "./firebase";
 
 async function fetchProducts() {
   const productsGrid = document.querySelector(".products__grid");
+  const itemCountEl = document.querySelector(".item__count span"); // Select the span inside item__count
   productsGrid.innerHTML = "";
 
   try {
     const querySnapshot = await getDocs(collection(db, "products"));
+    const totalProducts = querySnapshot.size; // total number of documents
+
+    // Update item count text
+    if (itemCountEl) {
+      itemCountEl.textContent = totalProducts;
+    }
+
     querySnapshot.forEach((doc) => {
       const product = doc.data();
       const productId = doc.id;
@@ -35,7 +43,7 @@ async function fetchProducts() {
         </div>
       `;
 
-      // Add click listener to send data to checkout page
+      // Click listener to send data to checkout page
       productCard.addEventListener("click", () => {
         const productData = {
           id: productId,
@@ -46,10 +54,8 @@ async function fetchProducts() {
           color: product.color || null,
           colorHex: product.colorHex || null,
         };
-        // Store in sessionStorage
         sessionStorage.setItem("selectedProduct", JSON.stringify(productData));
-        // Redirect to checkout
-       window.location.href = `/src/pages/checkout.html?id=${productId}`;
+        window.location.href = `/src/pages/checkout.html?id=${productId}`;
       });
 
       productsGrid.appendChild(productCard);
@@ -57,6 +63,7 @@ async function fetchProducts() {
   } catch (error) {
     console.error("Error loading products:", error);
     productsGrid.innerHTML = "<p>Failed to load products.</p>";
+    if (itemCountEl) itemCountEl.textContent = "0";
   }
 }
 

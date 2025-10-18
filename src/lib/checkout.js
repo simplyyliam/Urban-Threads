@@ -12,7 +12,6 @@ if (productData) {
     "product__image"
   ).style.backgroundImage = `url(${productData.imageURL})`;
 } else {
-  // fallback to Firestore if productId is in URL
 
   async function loadCheckoutProduct() {
     const params = new URLSearchParams(window.location.search);
@@ -36,3 +35,27 @@ if (productData) {
 
   loadCheckoutProduct();
 }
+
+const addCartBtn = document.getElementById("add-cart");
+
+const currentProduct = JSON.parse(sessionStorage.getItem("selectedProduct"));
+
+addCartBtn.addEventListener("click", () => {
+  if (!currentProduct) return;
+
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  // Check if the item is already in cart (optional, by id)
+  const existingIndex = cart.findIndex(item => item.id === currentProduct.id);
+  if (existingIndex > -1) {
+
+    cart[existingIndex].quantity += 1;
+  } else {
+
+    cart.push({ ...currentProduct, quantity: 1 });
+  }
+
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(`${currentProduct.name} added to cart!`);
+});

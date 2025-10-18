@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="/src/styles/cart.css" />
+  </head>
+  <body>
+    <main class="cart">
+      <h1 class="cart__title">Your Cart</h1>
+
+      <div class="cart__content">
+        <div class="cart__items" id="cartItems">
+          <!-- Dynamic items will be inserted here -->
+        </div>
+
+        <aside class="cart__summary">
+          <h3 class="cart__summary-title">Summary</h3>
+          <div class="cart__summary-row">
+            <span>Subtotal</span>
+            <span>R499</span>
+          </div>
+          <div class="cart__summary-row">
+            <span>Shipping</span>
+            <span>R99</span>
+          </div>
+          <div class="cart__summary-row cart__summary-total">
+            <span>Total</span>
+            <span>R598</span>
+          </div>
+          <button class="cart__checkout-btn">Checkout</button>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="/src/lib/search.js" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+    <script type="module" src="/src/lib/cart.js" defer></script>
+  </body>
+</html>
