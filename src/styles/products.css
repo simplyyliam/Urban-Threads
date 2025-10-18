@@ -4,11 +4,15 @@
      box-sizing: border-box;
 }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: #fff;
-            padding: 20px;
-        }
+body, html {
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    width: 100vw;
+    height: auto;
+}
 
         .product__container {
             display: flex;
