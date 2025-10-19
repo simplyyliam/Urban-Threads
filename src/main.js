@@ -1,6 +1,8 @@
 import { app } from "./lib/firebase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { initSearch } from "./lib/search";
+import "./styles/navbar.css";
+import "./styles/footer.css";
 
 const auth = getAuth(app);
 
