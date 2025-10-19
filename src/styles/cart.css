@@ -18,7 +18,7 @@ body, html {
 }
 
 
-/* Cart Container */
+/* ------------------ CART CONTAINER ------------------ */
 .cart {
     width: 100%;
     max-width: 1200px;
@@ -36,14 +36,14 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-/* Cart Content: Items + Summary */
+/* ------------------ CART CONTENT & SUMMARY ------------------ */
 .cart__content {
     display: flex;
     gap: 2rem;
     width: 100%;
 }
 
-/* Cart Items List */
+/* ------------------ CART ITEM LIST ------------------ */
 .cart__items {
     flex: 2;
     display: flex;
@@ -116,7 +116,7 @@ body, html {
     margin-left: auto;
 }
 
-/* Cart Summary */
+/* ------------------ CART SUMMARY ------------------ */
 .cart__summary {
     flex: 1;
     background: white;
@@ -168,7 +168,7 @@ body, html {
     background: #2a2a2a;
 }
 
-/* Responsive Design */
+/* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 1024px) {
     .cart__content {
         flex-direction: column;

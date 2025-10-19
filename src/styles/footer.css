@@ -11,7 +11,7 @@ footer {
 
 footer #footer__container {
     display: flex;
-    flex-wrap: wrap; /* allow items to stack on small screens */
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
@@ -19,7 +19,7 @@ footer #footer__container {
     gap: 2rem;
 }
 
-/* ------------------ BRAND ------------------ */
+/* ------------------ FOOTER BRAND ------------------ */
 .footer__brand {
     display: flex;
     flex-direction: column;
@@ -121,6 +121,12 @@ footer p {
 }
 
 /* ------------------ RESPONSIVE ------------------ */
+@media (min-width: 1200px) {
+    footer {
+        width: 75rem;
+    }
+}
+
 @media (max-width: 1024px) {
     footer #footer__container {
         padding: 1.5rem 2rem;

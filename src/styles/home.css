@@ -22,7 +22,7 @@ body, html {
 }
 
 
-/* Main content */
+/* ------------------ MAIN ------------------ */
 main {
     display: flex;
     flex-direction: column;
@@ -32,6 +32,8 @@ main {
     height: auto;
     gap: 8em;
 }
+
+/* ------------------ HERO BANNER ------------------ */
 
 #hero__banner {
     width: 78em;
@@ -81,6 +83,7 @@ main {
     padding: 18px 50px;
 }
 
+/* ------------------ FEATURE PRODUCTS ------------------ */
 
 .feature__products {
     display: flex;
@@ -162,7 +165,6 @@ main {
 
 /* ---------- RESPONSIVE DESIGN ---------- */
 
-/* Tablets */
 @media (max-width: 1024px) {
     nav {
         width: 100%;
@@ -171,7 +173,7 @@ main {
 
     #hero__banner {
         width: 100%;
-        height: 24em; /* slightly smaller */
+        height: 24em; 
         background-position: 50% 55%;
     }
 
@@ -199,7 +201,6 @@ main {
 
 }
 
-/* Mobile Navigation */
 @media (max-width: 768px) {
     nav {
         width: 100%;
@@ -211,18 +212,16 @@ main {
         padding: 10px;
     }
 
-    /* Hide nav links */
     .nav__links {
         display: none;
     }
 
-    /* Show hamburger */
     .hamburger {
         display: block;
         cursor: pointer;
     }
 
-    /* Dropdown menu */
+
     .mobile__menu {
         display: flex;
         flex-direction: column;
@@ -236,7 +235,6 @@ main {
         border-top: 1px solid #ddd;
     }
 
-    /* Ensure cart + profile are still visible */
     .nav__cart,
     #account__profile {
         display: block;
@@ -273,14 +271,14 @@ main {
 
 }
 
-/* Small Mobile */
+
 @media (max-width: 480px) {
     body {
         padding: 5px;
     }
 
     #nav__search {
-        display: none; /* remove search */
+        display: none;
     }
 
     #hero__banner {

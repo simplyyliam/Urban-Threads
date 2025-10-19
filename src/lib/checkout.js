@@ -1,8 +1,9 @@
 import { db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-// Try to load product from sessionStorage
+// initializing a variable "productData" by retrieving the value stored in the "selectedProduct" key of the session storage.
 const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
+
 
 if (productData) {
   document.getElementById("product__name").textContent = productData.name;
@@ -45,7 +46,7 @@ addCartBtn.addEventListener("click", () => {
 
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-  // Check if the item is already in cart (optional, by id)
+  // This block checks if there is already an item of the same id in the cart, if so it would update the quantity amount to accomodate that duplicate.
   const existingIndex = cart.findIndex(item => item.id === currentProduct.id);
   if (existingIndex > -1) {
 
@@ -55,6 +56,7 @@ addCartBtn.addEventListener("click", () => {
     cart.push({ ...currentProduct, quantity: 1 });
   }
 
+  // update the sessionStorage with the latest cart data
   sessionStorage.setItem("cart", JSON.stringify(cart));
 
   alert(`${currentProduct.name} added to cart!`);

@@ -2,17 +2,18 @@
 
 // DOM elements
 const cartItemsContainer = document.getElementById("cartItems");
-const subtotalEl = document.querySelector(".cart__summary-row span:nth-child(2)"); // first row value
-const shippingEl = document.querySelector(".cart__summary-row:nth-child(2) span:nth-child(2)"); // second row value
+const subtotalEl = document.querySelector(".cart__summary-row span:nth-child(2)"); // first row 
+const shippingEl = document.querySelector(".cart__summary-row:nth-child(2) span:nth-child(2)"); // second row
 const totalEl = document.querySelector(".cart__summary-total span:nth-child(2)");
 
-// fixed shipping cost
+// A fixed shipping cost
 const SHIPPING_COST = 99;
 
-// load cart from sessionStorage
+
+// initializing a variable "cart" by retrieving the value stored in the "cart" key of the session storage.
 let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-// render cart items
+// renderCart is responsible for rendering all the items in the cart with a dynamic cart__item element
 function renderCart() {
   cartItemsContainer.innerHTML = "";
 
@@ -44,14 +45,14 @@ function renderCart() {
   updateSummary(subtotal);
 }
 
-// update the summary section
+// This updates the summary when new items are added or removed
 function updateSummary(subtotal) {
   subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
   shippingEl.textContent = `R${SHIPPING_COST.toFixed(2)}`;
   totalEl.textContent = `R${(subtotal + SHIPPING_COST).toFixed(2)}`;
 }
 
-// handle quantity buttons and remove button
+// The cartItemContainer handles the increment/decrement of the quantity amount, ad well as handling the remove from cart action.
 cartItemsContainer.addEventListener("click", (e) => {
   const btn = e.target.closest(".cart__qty-btn, .cart__item-remove");
   if (!btn) return;

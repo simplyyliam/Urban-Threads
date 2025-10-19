@@ -1,10 +1,10 @@
 import { app } from "./lib/firebase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { initSearch } from "./lib/search"
+import { initSearch } from "./lib/search";
 
 const auth = getAuth(app);
 
-/* ------------------ LOAD LAYOUT ------------------ */
+// dynamically laods the navbar and footer on every page
 async function loadLayout() {
   try {
     // Load navbar
@@ -23,11 +23,9 @@ async function loadLayout() {
   }
 }
 
-/* ------------------ NAVBAR AUTH ------------------ */
 async function initNavbarAuth() {
-
   await loadLayout();
-  initSearch()
+  initSearch();
 
   // Get references to navbar elements
   const accountContainer = document.querySelector(".account");
@@ -43,48 +41,41 @@ async function initNavbarAuth() {
   // Create dynamic dropdown for sign out
   const signOutDropdown = document.createElement("div");
   signOutDropdown.classList.add("account__dropdown");
-  signOutDropdown.style.position = "absolute";
-  signOutDropdown.style.top = "50px";
-  signOutDropdown.style.right = "0";
-  signOutDropdown.style.background = "#fff";
-  signOutDropdown.style.border = "1px solid #ccc";
-  signOutDropdown.style.padding = "10px";
-  signOutDropdown.style.borderRadius = "10px";
-  signOutDropdown.style.display = "none"; // hidden initially
-  signOutDropdown.style.cursor = "pointer";
   signOutDropdown.textContent = "Sign Out";
   accountContainer.appendChild(signOutDropdown);
 
-  // Toggle dropdown on profile click
+  // Toggle dropdown when a user clicks on the profile
   accountProfile.addEventListener("click", (e) => {
     e.stopPropagation();
-    signOutDropdown.style.display =
-      signOutDropdown.style.display === "none" ? "block" : "none";
+    signOutDropdown.classList.toggle("open");
   });
 
   // Hide dropdown if clicked outside
-  document.addEventListener("click", () => {
-    signOutDropdown.style.display = "none";
+  document.addEventListener("click", (e) => {
+    if (!accountContainer.contains(e.target)) {
+      signOutDropdown.classList.remove("open");
+    }
   });
 
   // Sign out logic
   signOutDropdown.addEventListener("click", async () => {
     try {
       await signOut(auth);
-      signOutDropdown.style.display = "none";
+      signOutDropdown.classList.remove("open");
     } catch (error) {
       console.error(error);
       alert(error.message);
     }
   });
 
-  // Update UI based on auth state
+  // Update UI on auth state change
   onAuthStateChanged(auth, (user) => {
     updateUI(user, accountContainer, loginButton, accountProfile, accountId);
   });
 }
 
-/* ------------------ UPDATE UI FUNCTION ------------------ */
+
+// Updates the UI based on user authentication state
 function updateUI(user, accountContainer, loginButton, accountProfile, accountId) {
   if (user) {
     const displayName = user.displayName || user.email || "User";
@@ -107,5 +98,4 @@ function updateUI(user, accountContainer, loginButton, accountProfile, accountId
   }
 }
 
-/* ------------------ RUN ------------------ */
 initNavbarAuth();

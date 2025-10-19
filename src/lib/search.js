@@ -18,7 +18,7 @@ export async function initSearch() {
 
   console.log("Loaded products:", products);
 
-  // Attach search event
+  //searchInput listener filters items being searched as the user types.
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
     console.log("Search input:", query);
@@ -47,7 +47,7 @@ export async function initSearch() {
     }
   });
 
-  // Click result → go to checkout
+  // handles click listener and junps to checkout page
   searchResults.addEventListener("click", (e) => {
     if (e.target.classList.contains("search-result-item")) {
       const productId = e.target.getAttribute("data-id");

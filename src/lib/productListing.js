@@ -3,12 +3,14 @@ import { db } from "./firebase";
 
 async function fetchProducts() {
   const productsGrid = document.querySelector(".products__grid");
-  const itemCountEl = document.querySelector(".item__count span"); // Select the span inside item__count
+  const itemCountEl = document.querySelector(".item__count span"); 
   productsGrid.innerHTML = "";
 
   try {
     const querySnapshot = await getDocs(collection(db, "products"));
-    const totalProducts = querySnapshot.size; // total number of documents
+    // Holds the total amount of docs
+    const totalProducts = querySnapshot.size;     
+
 
     // Update item count text
     if (itemCountEl) {
@@ -43,7 +45,7 @@ async function fetchProducts() {
         </div>
       `;
 
-      // Click listener to send data to checkout page
+      // Handles click listener to send the data of a clicked item to the checkout page
       productCard.addEventListener("click", () => {
         const productData = {
           id: productId,

@@ -1,4 +1,4 @@
-/* Base Styles (Mobile-First) */
+
 body, html {
     scroll-behavior: smooth;
     display: flex;
@@ -25,7 +25,7 @@ body, html {
 #product__image {
     background-size: cover;
     background-position: center;
-    height: 300px; /* Adjust for mobile */
+    height: 300px;
 }
 
 .checkout__summary {
@@ -70,7 +70,7 @@ body, html {
 .product__sizes .size-buttons button {
     border: none;
     background-color: #F8F7F4;
-    flex: 1 1 calc(50% - 8px); /* 2 buttons per row */
+    flex: 1 1 calc(50% - 8px);
     height: 60px;
     border-radius: 10px;
     font-size: 16px;
@@ -103,7 +103,8 @@ body, html {
     font-weight: 500;
 }
 
-/* Larger Screens */
+/* ------------------ RESPONSIVE ------------------ */
+
 @media (min-width: 768px) {
     .checkout__container {
         flex-direction: row;

@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Container */
+/* ------------------ CONTAINER ------------------ */
 .login__container {
     background: white;
     border-radius: 30px;
@@ -31,7 +31,7 @@ body, html {
     max-width: 486px;
 }
 
-/* Header Section */
+/* ------------------ HERO HEADER ------------------ */
 .login__header {
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ body, html {
     max-width: 90%;
 }
 
-/* Social login buttons */
+/* ------------------ SOCIAL LOGIN BUTTONS ------------------ */
 .login__options {
     display: flex;
     gap: 12px;
@@ -98,7 +98,7 @@ body, html {
     height: 24px;
 }
 
-/* Form Section */
+/* ------------------ FORM SECTION ------------------ */
 .login__form {
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@ body, html {
     background: #222;
 }
 
-/* Remember me and forgot password */
+/* ------------------ REMEMBER ME & FORGET PASSWORD ------------------ */
 .login__footer {
     display: flex;
     justify-content: space-between;
@@ -213,7 +213,7 @@ body, html {
     color: #4a7ce0;
 }
 
-/* Responsive Media Queries */
+/* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 480px) {
     .login__container {
         padding: 20px 15px;

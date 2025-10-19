@@ -10,14 +10,14 @@ import {
 
 const auth = getAuth(app);
 
-// Elements
+// Initialization of DOM elements
 const loginBtn = document.querySelector(".login-button");
 const emailInput = document.querySelector(".input__field[type='email']");
 const passwordInput = document.querySelector(".input__field[type='password']");
 const googleButton = document.querySelector(".platform__button[aria-label='Login with Google']");
 const signupLink = document.querySelector(".login__signup a");
 
-// Track current mode: login or signup
+// This checks which mode the user is on: Login || signup
 let authMode = "login";
 
 // Handle "Sign up" link click
@@ -26,7 +26,6 @@ signupLink.addEventListener("click", (e) => {
     authMode = "signup";
     loginBtn.textContent = "Sign Up";
 
-    // Optional: Change header/subtitle text
     const title = document.querySelector(".title");
     const subtitle = document.querySelector(".subtitle");
     if (title) title.textContent = "Create Your Account";
@@ -55,7 +54,7 @@ loginBtn.addEventListener("click", async (e) => {
             alert("Account created successfully!");
         }
 
-        // Redirect to home page
+        // Redirect back to the home page
         window.location.href = "/index.html";
     } catch (error) {
         console.error(error);
@@ -63,7 +62,7 @@ loginBtn.addEventListener("click", async (e) => {
     }
 });
 
-// Google login
+// GoogleAuth login
 googleButton.addEventListener("click", async (e) => {
     e.preventDefault();
     try {
@@ -75,7 +74,7 @@ googleButton.addEventListener("click", async (e) => {
     }
 });
 
-// Optional: Reset button back to login if user is already logged in
+// If the user already has signed up, this resets back to login mode
 onAuthStateChanged(auth, (user) => {
     if (user) {
         authMode = "login";
