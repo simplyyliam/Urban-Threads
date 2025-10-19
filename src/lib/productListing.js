@@ -57,7 +57,7 @@ async function fetchProducts() {
           colorHex: product.colorHex || null,
         };
         sessionStorage.setItem("selectedProduct", JSON.stringify(productData));
-        window.location.href = `/pages/checkout.html?id=${productId}`;
+        window.location.href = `/src/pages/checkout.html?id=${productId}`;
       });
 
       productsGrid.appendChild(productCard);

@@ -9,13 +9,13 @@ const auth = getAuth(app);
 async function loadLayout() {
   try {
     // Load navbar
-    const navbar = await fetch("/components/navbar.html").then((res) =>
+    const navbar = await fetch("/src/components/navbar.html").then((res) =>
       res.text()
     );
     document.body.insertAdjacentHTML("afterbegin", navbar);
 
     // Load footer
-    const footer = await fetch("/components/footer.html").then((res) =>
+    const footer = await fetch("/src/components/footer.html").then((res) =>
       res.text()
     );
     document.body.insertAdjacentHTML("beforeend", footer);

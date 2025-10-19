@@ -51,7 +51,7 @@ export async function initSearch() {
   searchResults.addEventListener("click", (e) => {
     if (e.target.classList.contains("search-result-item")) {
       const productId = e.target.getAttribute("data-id");
-      window.location.href = `/pages/checkout.html?id=${productId}`;
+      window.location.href = `/src/pages/checkout.html?id=${productId}`;
     }
   });
 }
