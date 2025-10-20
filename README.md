@@ -20,7 +20,7 @@ A modern, dynamic web project built with Vite, vanilla HTML, CSS, and JavaScript
 
 1. **Clone the repository**
 ```bash
-git clone <your-github-repo-url>
+git clone https://github.com/simplyyliam/Urban-Threads
 cd Urban-Threads
 
 npm install
